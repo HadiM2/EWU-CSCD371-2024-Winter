@@ -11,6 +11,7 @@ class Program //internal class Program: Internal is an acess modifier, means you
         // Everything is an object and everything is a type in C#
         1.toString();
         "1".getType();
-        Console.WriteLine(1.GetType().ToString())
+        Console.WriteLine(1.GetType().ToString());
+        Console.WriteLine("Hello my name is Hadi");
     }
 }
