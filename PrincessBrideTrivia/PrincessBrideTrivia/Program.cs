@@ -16,11 +16,12 @@ public class Program
                 numberCorrect++;
             }
         }
-        Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length) + " correct");
+        Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length - 1) + " correct");
     }
 
     public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
     {
+        Console.WriteLine("Correct: ", numberCorrectAnswers);
         return (numberCorrectAnswers / numberOfQuestions * 100) + "%";
     }
 
