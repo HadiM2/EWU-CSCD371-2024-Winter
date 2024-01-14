@@ -16,13 +16,14 @@ public class Program
                 numberCorrect++;
             }
         }
-        Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length - 1) + " correct");
+        Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length) + " correct");
     }
 
     public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
     {
-        Console.WriteLine("Correct: ", numberCorrectAnswers);
-        return (numberCorrectAnswers / numberOfQuestions * 100) + "%";
+        Console.WriteLine("Number of Correct Answers: " + numberCorrectAnswers);
+        double percentageCalc = (numberCorrectAnswers / numberOfQuestions * 100);
+        return percentageCalc + "%";
     }
 
     public static bool AskQuestion(Question question)
@@ -42,11 +43,11 @@ public class Program
     {
         if (userGuess == question.CorrectAnswerIndex)
         {
-            Console.WriteLine("Correct");
+            Console.WriteLine("Correct\n");
             return true;
         }
 
-        Console.WriteLine("Incorrect");
+        Console.WriteLine("Incorrect\n");
         return false;
     }
 
