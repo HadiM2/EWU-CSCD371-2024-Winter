@@ -21,9 +21,9 @@ public class Program
 
     public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
     {
-        Console.WriteLine("Number of Correct Answers: " + numberCorrectAnswers);
-        double percentageCalc = (numberCorrectAnswers / numberOfQuestions * 100);
-        return percentageCalc + "%";
+        Console.WriteLine("Number of Correct Answers: " + numberCorrectAnswers + " out of " + numberOfQuestions);
+        double percentageCalc = ((double)numberCorrectAnswers / (double)numberOfQuestions * 100);
+        return percentageCalc.ToString("#.##") + "%";
     }
 
     public static bool AskQuestion(Question question)
