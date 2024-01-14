@@ -23,7 +23,11 @@ public class Program
     {
         Console.WriteLine("Number of Correct Answers: " + numberCorrectAnswers + " out of " + numberOfQuestions);
         double percentageCalc = ((double)numberCorrectAnswers / (double)numberOfQuestions * 100);
-        return percentageCalc.ToString("#.##") + "%";
+        if (percentageCalc > 0)
+        {
+            return percentageCalc.ToString("#.##") + "%";
+        }
+        return percentageCalc + "%";
     }
 
     public static bool AskQuestion(Question question)
