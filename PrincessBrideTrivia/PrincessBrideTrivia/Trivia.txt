@@ -28,7 +28,7 @@ Iokane
 Cyanide
 Iodine
 1
-Is Westley is left handed ?
+Is Westley left handed?
 Yes
 No
 Neither
