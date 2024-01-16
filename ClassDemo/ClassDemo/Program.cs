@@ -20,11 +20,12 @@ public class Program //internal class Program: Internal is an acess modifier, me
     //}
     public bool Login(string username, string password)
     {
-        if (username == "Ingio.Montoya" && password == "goodpassword") {
+        if (username == "Ingio.Montoya" || username == "Princess.Buttercup" && password == "goodpassword") {
             return true;
-        }else if (username == "Ingio.Montoya" && password == "badpassword")
+        }else if (username == "Ingio.Montoya" || username == "Princess.Buttercup" && password == "badpassword")
         {
             return false;
         }
+        return false;
     }
 }

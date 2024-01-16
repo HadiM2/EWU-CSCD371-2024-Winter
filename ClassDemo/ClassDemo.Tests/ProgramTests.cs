@@ -42,7 +42,10 @@ public class ProgramTests
         //program.Login(username: "Ingio.Montoya", password: "password");
 
     }
-    //[Fact]
-    //public void Login_
+    [Fact]
+    public void Login_PrincessButtercupWithGoodPassword_SuccessfulLogin()
+    {
+        Assert.True(_Program.Login("Princess.Buttercup", "goodpassword")
+    }
 
 }
