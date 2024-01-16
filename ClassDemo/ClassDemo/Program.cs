@@ -18,7 +18,7 @@ public class Program //internal class Program: Internal is an acess modifier, me
     //{
     //    throw new NotImplementedException();
     //}
-    public bool Login(string username, string password)
+    public bool TryLogin(string username, string password)
     {
         if (username == "Ingio.Montoya" || username == "Princess.Buttercup" && password == "goodpassword") {
             return true;
@@ -27,5 +27,12 @@ public class Program //internal class Program: Internal is an acess modifier, me
             return false;
         }
         return false;
+    }
+    public void Login(string username, string password)
+    {
+        if (!TryLogin(username, password))
+        {
+            throw new InvalidOperationException("Your login is not valid.");
+        }
     }
 }
