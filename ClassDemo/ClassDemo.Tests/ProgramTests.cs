@@ -2,26 +2,47 @@ namespace ClassDemo.Tests;
 
 public class ProgramTests
 {
+    Program _Program;
+
+    //Runs each time before test
+    public ProgramTests()
+    {
+        Cleanup();
+        _Program = TestIntialize();
+        File file = new File();
+    }
+    int _InstanceCount = 0;
+
+    private static Program TestIntialize()
+    {
+        return new Program();
+    }
+
     [Fact]
     public void Login_InigoMontoyaWithGoodPassword_SuccessfulLogin()
     {
-        Program program = new Program();
-        //program.Login(username: "Ingio.Montoya", password: "password");
+        Assert.Equal(0, _InstanceCount);
         string username = "Ingio.Montoya";
         string password = "goodpassword";
+        Assert.True(_Program.Login(username, password));
+        _InstanceCount++;
+
         //Program.Main();
-        Assert.True(program.Login(username, password));
+        //program.Login(username: "Ingio.Montoya", password: "password");
     }
 
     [Fact]
     public void Login_InigoMontoyaWithGoodPassword_FailedLogin()
     {
-        Program program = new Program();
-        //program.Login(username: "Ingio.Montoya", password: "password");
+        Assert.Equal(0, _InstanceCount);
         string username = "Ingio.Montoya";
         string password = "badpassword";
-        Assert.False(program.Login(username, password));
+        Assert.False(_Program.Login(username, password));
+        _InstanceCount++;
+        //program.Login(username: "Ingio.Montoya", password: "password");
 
     }
+    //[Fact]
+    //public void Login_
 
 }
