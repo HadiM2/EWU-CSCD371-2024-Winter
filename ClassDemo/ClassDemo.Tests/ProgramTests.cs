@@ -30,14 +30,22 @@ public class ProgramTests
         //Program.Main();
         //program.Login(username: "Ingio.Montoya", password: "password");
     }
-
+    [Theory]
+    [InlineData("Inigo.Montoya", "goodpassword")]
+    [InlineData("Princess.Buttercup". "goodpassword")]
+    [InlineData("Count.Rugen", "goodpassword")]
+    [InlineData("Dread.Pirate.Roberts", "goodpassword")]
+    public void TryLogin_WithGoodPassword_SuccessfulLogin(string username, string password)
+    {
+        Assert.True(Program.Login(username, password));
+    }
     [Fact]
     public void TryLogin_InigoMontoyaWithGoodPassword_FailedLogin()
     {
         Assert.Equal(0, _InstanceCount);
         string username = "Ingio.Montoya";
         string password = "badpassword";
-        Assert.False(Program.Login(username, password));
+        Assert.False(Program.Login(username, password), "Failed Login");
         _InstanceCount++;
         //program.Login(username: "Ingio.Montoya", password: "password");
 
