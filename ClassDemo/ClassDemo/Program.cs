@@ -35,4 +35,18 @@ public class Program //internal class Program: Internal is an acess modifier, me
             throw new InvalidOperationException("Your login is not valid.");
         }
     }
+
+    public bool TryConvert(string number, out int? result)
+    {
+        if(number == "one")
+        {
+            result = 1;
+            return true;
+        }
+        else
+        {
+            result = null;
+            return false;
+        }
+    }
 }

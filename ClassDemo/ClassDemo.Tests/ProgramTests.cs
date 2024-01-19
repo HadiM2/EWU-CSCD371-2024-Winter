@@ -80,4 +80,12 @@ public class ProgramTests
         }
         Assert.Fail("Exception not thrown for bad login")
     }
+
+    [Theory]
+    [InlineData("nine", 9)]
+    [InlineData("InigoMontoya", 9)]
+    public void Convert_NumberString_ToIntSFailed(string inputNum, bool result)
+    {
+        Assert.Equal(result, Program.TryConvert(inputNum, out int reultingNumber));
+    }
 }
